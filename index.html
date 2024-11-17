@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Crypto Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #0d1117;
+      color: #f0f6fc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ff9800;
+    }
+
+    .audio-container {
+      margin: 20px 0;
+    }
+
+    .crypto-address {
+      margin: 20px 0;
+      background: #1c1f26;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .crypto-address input {
+      border: none;
+      background: transparent;
+      color: #f0f6fc;
+      font-size: 16px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .crypto-address button {
+      background: #ff9800;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .crypto-address button:hover {
+      background: #e68a00;
+    }
+
+    .social-links a {
+      color: #1d9bf0;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .social-links a:hover {
+      color: #0d8af0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to Meme Crypto Coin!</h1>
+  <p>Your gateway to the moon 🚀</p>
+
+  <!-- Audio Frames -->
+  <div class="audio-container">
+    <h2>Hit Play for Vibes</h2>
+    <audio controls>
+      <source src="audio1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <br>
+    <audio controls>
+      <source src="audio2.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Crypto Address -->
+  <div class="crypto-address">
+    <h2>Donate to the Meme Fund</h2>
+    <input type="text" id="cryptoAddress" value="0xYourCryptoTokenAddressHere" readonly>
+    <button onclick="copyAddress()">Copy</button>
+  </div>
+
+  <!-- Social Links -->
+  <div class="social-links">
+    <h2>Follow Us</h2>
+    <a href="https://twitter.com/YourCryptoCoin" target="_blank">Twitter</a>
+    <a href="https://bsky.app/profile/YourCryptoCoin" target="_blank">BlueSky</a>
+    <a href="https://t.me/YourCryptoCoin" target="_blank">Telegram</a>
+  </div>
+
+  <script>
+    function copyAddress() {
+      const cryptoAddress = document.getElementById("cryptoAddress");
+      cryptoAddress.select();
+      cryptoAddress.setSelectionRange(0, 99999); // For mobile devices
+      navigator.clipboard.writeText(cryptoAddress.value)
+        .then(() => alert("Crypto address copied to clipboard!"))
+        .catch(err => alert("Failed to copy: " + err));
+    }
+  </script>
+</body>
+
+</html>
